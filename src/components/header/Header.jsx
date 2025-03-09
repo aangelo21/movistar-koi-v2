@@ -24,7 +24,7 @@ function Header() {
 
         <nav className="header-navbar">
           <a href="/home">Inicio</a>
-          <a href="/home">Competiciones</a>
+          <a href="/competitions">Competiciones</a>
           <a href="/home">Calendario</a>
           <a href="/home">Sobre Nosotros</a>
         </nav>
@@ -32,7 +32,7 @@ function Header() {
         {isMenuOpen && (
           <nav className="header-menu-navbar">
             <a href="/home">Inicio</a>
-            <a href="/home">Competiciones</a>
+            <a href="/competitions">Competiciones</a>
             <a href="/home">Calendario</a>
             <a href="/home">Sobre Nosotros</a>
           </nav>
