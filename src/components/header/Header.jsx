@@ -12,7 +12,7 @@ function Header() {
       <div className="header-container">
         <img
           className="header-logo"
-          src="/logo/movistar-koi-logo.webp"
+          src="/logos/movistar-koi.webp"
           alt="Movistar KOI logo"
         />
         <img
