@@ -28,11 +28,18 @@
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
+  .home-content-koi,
+  .home-content-fusion {
+    width: 80%;
+  }
+
   .home-container {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(10, 1fr);
     gap: 8px;
+    align-items: center;
+    justify-items: center;
   }
 
   .home-title-koi {
