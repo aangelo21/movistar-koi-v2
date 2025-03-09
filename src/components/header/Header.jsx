@@ -26,7 +26,7 @@ function Header() {
           <a href="/home">Inicio</a>
           <a href="/competitions">Competiciones</a>
           <a href="/sponsors">Patrocinadores</a>
-          <a href="/home">Calendario</a>
+          <a href="/calendar">Calendario</a>
         </nav>
 
         {isMenuOpen && (
@@ -34,7 +34,7 @@ function Header() {
             <a href="/home">Inicio</a>
             <a href="/competitions">Competiciones</a>
             <a href="/sponsors">Patrocinadores</a>
-            <a href="/home">Calendario</a>
+            <a href="/calendar">Calendario</a>
           </nav>
         )}
       </div>
