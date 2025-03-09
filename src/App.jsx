@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./layout/Layout";
 import Home from "./pages/home/Home";
 import Competitions from "./pages/competitions/Competitions";
+import Sponsors from "./pages/sponsors/Sponsors"; // Import Sponsors
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
             <Route path="/competitions" element={<Competitions />} />
+            <Route path="/sponsors" element={<Sponsors />} /> {/* Add Sponsors route */}
           </Route>
         </Routes>
       </BrowserRouter>
