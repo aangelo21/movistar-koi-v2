@@ -1,8 +1,10 @@
 import "./Home.css";
+import Banner from "../../components/banner/Banner";
 
 function Home() {
   return (
     <>
+      <Banner title="Inicio" />
       <div class="home-container">
         <div class="home-title-koi">
           <h1>Movistar KOI</h1>
@@ -26,8 +28,8 @@ function Home() {
             fomentar un entorno seguro y respetuoso para todos los jugadores,
             promoviendo valores como la inclusión y el respeto. Además, nos
             comprometemos a innovar constantemente, manteniéndonos a la
-            vanguardia de las tendencias y tecnologías emergentes en el mundo
-            de los eSports.
+            vanguardia de las tendencias y tecnologías emergentes en el mundo de
+            los eSports.
           </p>
         </div>
         <div class="home-image-koi">
