@@ -1,7 +1,7 @@
 
 # Movistar KOI
 
-A website about the esports team Movistar KOI
+A website about Movistar KOI
 
 
 ## Installation
