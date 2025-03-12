@@ -14,14 +14,6 @@
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.home-content-koi,
-.home-content-fusion {
-  border-radius: 0.2rem;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  padding: 0.5rem;
-  text-align: justify;
-}
-
 .home-container h1 {
   color: var(--jazz-blue);
   text-align: center;
