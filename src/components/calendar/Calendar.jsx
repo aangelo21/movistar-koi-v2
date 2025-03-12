@@ -12,6 +12,19 @@ import { getDatabase, ref, onValue } from "firebase/database";
 function CalendarApp() {
   const eventsService = useState(() => createEventsServicePlugin())[0];
   const [events, setEvents] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  // Crear el calendario después de que los eventos se hayan cargado
+  const calendar = useCalendarApp({
+    views: [createViewWeek(), createViewMonthGrid()],
+    events: events, // Usar events en lugar de initialEvents
+    defaultView: "month",
+    plugins: [
+      eventsService,
+      createDragAndDropPlugin(),
+      createEventModalPlugin(),
+    ],
+  });
 
   useEffect(() => {
     const eventsRef = ref(db, "events");
@@ -29,21 +42,22 @@ function CalendarApp() {
         }));
         console.log("Formatted events:", formattedEvents);
         setEvents(formattedEvents);
-      }
-    });
-  }, []);
 
-  console.log("Current events state:", events);
-  const calendar = useCalendarApp({
-    views: [createViewWeek(), createViewMonthGrid()],
-    initialEvents: events,
-    defaultView: "month",
-    plugins: [
-      eventsService,
-      createDragAndDropPlugin(),
-      createEventModalPlugin(),
-    ],
-  });
+        // Actualizar eventos usando el servicio de eventos después de cargarlos
+        try {
+          eventsService.set(formattedEvents);
+          console.log("Events updated via service");
+        } catch (error) {
+          console.error("Error updating events:", error);
+        }
+      }
+      setIsLoading(false);
+    });
+  }, [eventsService]);
+
+  if (isLoading) {
+    return <div>Loading calendar...</div>;
+  }
 
   return (
     <div className="calendar-container">
