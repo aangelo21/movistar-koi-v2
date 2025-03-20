@@ -8,9 +8,10 @@ function Sponsors() {
     <>
       <Banner title="Patrocinadores" />
       <div className="sponsors-container">
-        {sponsorsData.map((sponsor, index) => (
+        {sponsorsData.map((sponsor) => (
           <Sponsor
-            key={index}
+            key={sponsor.id}
+            sponsorId={sponsor.id}
             sponsorDescription={sponsor.description}
             sponsorImage={sponsor.image}
           />

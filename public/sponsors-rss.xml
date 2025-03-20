@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Movistar KOI Sponsors</title>
+        <link>https://movistar-koi-v2-86d64.web.app</link>
+        <description>Patrocinadores oficiales de Movistar KOI</description>
+
+        <item>
+            <title>Movistar - Patrocinador Principal</title>
+            <link>https://movistar-koi-v2-86d64.web.app/sponsors#1</link>
+            <description>Principal patrocinador y socio estratégico de Movistar KOI.</description>
+            <enclosure url="https://movistar-koi-v2-86d64.web.app/sponsors/movistar.webp" type="image/webp"/>
+            <guid>movistar-koi-sponsor-1</guid>
+        </item>
+
+        <item>
+            <title>Kappa - Equipación Oficial</title>
+            <link>https://movistar-koi-v2-86d64.web.app/sponsors#2</link>
+            <description>Proveedor oficial de equipación deportiva. Diseña las camisetas y ropa técnica del equipo.</description>
+            <enclosure url="https://movistar-koi-v2-86d64.web.app/sponsors/kappa.webp" type="image/webp"/>
+            <guid>movistar-koi-sponsor-2</guid>
+        </item>
+
+        <item>
+            <title>Razer - Tecnología Gaming</title>
+            <link>https://movistar-koi-v2-86d64.web.app/sponsors#3</link>
+            <description>Patrocinador tecnológico especializado en periféricos gaming y hardware de alto rendimiento.</description>
+            <enclosure url="https://movistar-koi-v2-86d64.web.app/sponsors/razer.webp" type="image/webp"/>
+            <guid>movistar-koi-sponsor-3</guid>
+        </item>
+
+        <item>
+            <title>CUPRA - Movilidad Eléctrica</title>
+            <link>https://movistar-koi-v2-86d64.web.app/sponsors#4</link>
+            <description>Socio en movilidad eléctrica. Desarrolla experiencias interactivas para fans y eventos exclusivos.</description>
+            <enclosure url="https://movistar-koi-v2-86d64.web.app/sponsors/cupra.webp" type="image/webp"/>
+            <guid>movistar-koi-sponsor-4</guid>
+        </item>
+
+        <item>
+            <title>Ecoembes - Sostenibilidad</title>
+            <link>https://movistar-koi-v2-86d64.web.app/sponsors#5</link>
+            <description>Partner oficial de sostenibilidad. Implementa programas de economía circular y reducción de huella de carbono.</description>
+            <enclosure url="https://movistar-koi-v2-86d64.web.app/sponsors/ecoembes.webp" type="image/webp"/>
+            <guid>movistar-koi-sponsor-5</guid>
+        </item>
+
+        <item>
+            <title>OWO - Tecnología Háptica</title>
+            <link>https://movistar-koi-v2-86d64.web.app/sponsors#6</link>
+            <description>Proveedor de tecnología háptica. Desarrolla chalecos inmersivos para experiencia gaming.</description>
+            <enclosure url="https://movistar-koi-v2-86d64.web.app/sponsors/owo.webp" type="image/webp"/>
+            <guid>movistar-koi-sponsor-6</guid>
+        </item>
+
+        <item>
+            <title>Médicos del Mundo - Patrocinador Social</title>
+            <link>https://movistar-koi-v2-86d64.web.app/sponsors#7</link>
+            <description>Patrocinador social. Colabora en campañas de salud global y derechos humanos.</description>
+            <enclosure url="https://movistar-koi-v2-86d64.web.app/sponsors/medicos-del-mundo.webp" type="image/webp"/>
+            <guid>movistar-koi-sponsor-7</guid>
+        </item>
+
+        <item>
+            <title>Risketos - Snacks Oficiales</title>
+            <link>https://movistar-koi-v2-86d64.web.app/sponsors#8</link>
+            <description>Marca de snacks saludables. Presente en eventos y contenido digital del equipo.</description>
+            <enclosure url="https://movistar-koi-v2-86d64.web.app/sponsors/risketos.webp" type="image/webp"/>
+            <guid>movistar-koi-sponsor-8</guid>
+        </item>
+
+        <item>
+            <title>Zilliqa - Tecnología Blockchain</title>
+            <link>https://movistar-koi-v2-86d64.web.app/sponsors#9</link>
+            <description>Plataforma blockchain. Desarrolla programas de lealtad con tecnología Web3 para fans.</description>
+            <enclosure url="https://movistar-koi-v2-86d64.web.app/sponsors/zilliqa.webp" type="image/webp"/>
+            <guid>movistar-koi-sponsor-9</guid>
+        </item>
+
+        <item>
+            <title>Mahou - Bebidas Oficiales</title>
+            <link>https://movistar-koi-v2-86d64.web.app/sponsors#10</link>
+            <description>Proveedor oficial de bebidas. Colabora en eventos presenciales y activaciones digitales.</description>
+            <enclosure url="https://movistar-koi-v2-86d64.web.app/sponsors/mahou.webp" type="image/webp"/>
+            <guid>movistar-koi-sponsor-10</guid>
+        </item>
+    </channel>
+</rss>

@@ -1,14 +1,10 @@
 import "./Sponsor.css";
 
-function Sponsor({ sponsorDescription, sponsorImage }) {
+function Sponsor({ sponsorDescription, sponsorImage, sponsorId }) {
   return (
-    <div className="sponsor">
-      <img
-        src={sponsorImage}
-        alt="sponsor"
-        className="sponsor-image"
-      />
-      <p className="sponsor-description">{sponsorDescription}</p>
+    <div className="sponsor" id={`sponsor-${sponsorId}`}>
+      <img src={sponsorImage} alt={sponsorDescription} />
+      <p>{sponsorDescription}</p>
     </div>
   );
 }
