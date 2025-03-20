@@ -49,6 +49,16 @@ function Footer() {
               alt="Instagram icon"
             />
           </a>
+          <a
+            href="https://movistar-koi-v2-86d64.web.app/sponsors-rss.xml"
+            target="_blank"
+          >
+            <img
+              className="footer-instagram-icon"
+              src="logos/rss.svg"
+              alt="Rss icon"
+            />
+          </a>
         </div>
         {termsAndConditions && (
           <div className="footer-terms-and-conditions-popup">
