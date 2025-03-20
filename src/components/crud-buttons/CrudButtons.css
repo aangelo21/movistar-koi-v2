@@ -2,6 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     margin-top: 1rem;
     gap: 1rem;
   }
@@ -35,4 +36,11 @@
   background: #F7FAFC;
   transform: scale(1.1);
   transition: 0.2s;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .crud-buttons-container {
+    flex-direction: row;
+  }
 }

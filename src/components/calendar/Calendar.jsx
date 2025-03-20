@@ -14,14 +14,12 @@ function CalendarApp() {
   const [events, setEvents] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  // Crear el calendario después de que los eventos se hayan cargado
   const calendar = useCalendarApp({
     views: [createViewWeek(), createViewMonthGrid()],
-    events: events, // Usar events en lugar de initialEvents
+    events: events,
     defaultView: "month",
     plugins: [
       eventsService,
-      createDragAndDropPlugin(),
       createEventModalPlugin(),
     ],
   });
@@ -43,7 +41,6 @@ function CalendarApp() {
         console.log("Formatted events:", formattedEvents);
         setEvents(formattedEvents);
 
-        // Actualizar eventos usando el servicio de eventos después de cargarlos
         try {
           eventsService.set(formattedEvents);
           console.log("Events updated via service");
