@@ -23,14 +23,14 @@
 .footer-instagram-icon {
   width: 1.5rem;
   cursor: pointer;
-  transition: transform 1s;
+  transition: transform 0.2s;
 }
 
 .footer-github-icon:hover,
 .footer-x-icon:hover,
 .footer-instagram-icon:hover {
   transform: scale(1.2);
-  transition: transform 1s;
+  transition: transform 0.2s;
 }
 
 .footer-terms-and-conditions {

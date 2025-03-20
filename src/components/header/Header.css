@@ -13,12 +13,12 @@
 .header-menu-icon {
   height: 2rem;
   cursor: pointer;
-  transition: 1s;
+  transition: 0.2s;
 }
 
 .header-menu-icon:hover {
   scale: 1.2;
-  transition: 1s;
+  transition: 0.2s;
 }
 
 .header-menu-navbar {
@@ -38,12 +38,12 @@
   padding: 0.5rem 1rem;
   display: block;
   cursor: pointer;
-  transition: 1s;
+  transition: 0.2s;
 }
 
 .header-menu-navbar a:hover {
   scale: 1.2;
-  transition: 1s;
+  transition: 0.2s;
 }
 
 .header-navbar {
@@ -74,11 +74,11 @@
     padding: 0.5rem 1rem;
     display: block;
     cursor: pointer;
-    transition: 1s;
+    transition: 0.2s;
   }
 
   .header-navbar a:hover {
     scale: 1.2;
-    transition: 1s;
+    transition: 0.2s;
   }
 }
