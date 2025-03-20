@@ -24,6 +24,9 @@ No, this is not Movistar KOI official webpage, it was created as a personal proj
 
 You can, don't hesitate to modify anything and create a pull request to make it even better!
 
+## RSS
+
+![RSS](https://github.com/aangelo-21/movistar-koi-v2/blob/developer/captura-rss.png)
 
 ## Acknowledgements
 
