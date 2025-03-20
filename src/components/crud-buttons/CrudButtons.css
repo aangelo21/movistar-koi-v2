@@ -78,6 +78,19 @@
   border-radius: 4px;
 }
 
+.modal select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.modal p {
+  margin: 15px 0;
+  text-align: center;
+}
+
 .modal-buttons {
   display: flex;
   gap: 10px;
