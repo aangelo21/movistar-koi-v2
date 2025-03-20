@@ -1,6 +1,6 @@
 import "./CrudButtons.css";
 import { useState, useEffect } from "react";
-import { ref, push, get, remove, update } from "firebase/database";
+import { ref, push, remove, update, onValue } from "firebase/database";
 import { db } from "../../firebase/config";
 
 function CrudButtons() {
@@ -19,25 +19,27 @@ function CrudButtons() {
   });
 
   useEffect(() => {
-    loadEvents();
-  }, []);
-
-  const loadEvents = async () => {
     const eventsRef = ref(db, "events");
-    const snapshot = await get(eventsRef);
-    if (snapshot.exists()) {
-      const eventsData = snapshot.val();
-      const eventsArray = Object.entries(eventsData).map(([key, value]) => ({
-        ...value,
-        firebaseKey: key
-      }));
-      setEvents(eventsArray);
-      
-      const ids = eventsArray.map(event => parseInt(event.id));
-      const maxId = Math.max(...ids);
-      setNextId(maxId + 1);
-    }
-  };
+    const unsubscribe = onValue(eventsRef, (snapshot) => {
+      if (snapshot.exists()) {
+        const eventsData = snapshot.val();
+        const eventsArray = Object.entries(eventsData).map(([key, value]) => ({
+          ...value,
+          firebaseKey: key
+        }));
+        setEvents(eventsArray);
+        
+        const ids = eventsArray.map(event => parseInt(event.id));
+        const maxId = ids.length > 0 ? Math.max(...ids) : 0;
+        setNextId(maxId + 1);
+      } else {
+        setEvents([]);
+        setNextId(0);
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
 
   const formatDateTime = (dateTimeString) => {
     const date = new Date(dateTimeString);
@@ -62,7 +64,6 @@ function CrudButtons() {
       };
       
       await push(eventsRef, formattedEvent);
-      setNextId(nextId + 1);
       setShowModal(false);
       setEventData({
         description: "",
@@ -98,7 +99,6 @@ function CrudButtons() {
         start: "",
         title: ""
       });
-      loadEvents();
     } catch (error) {
       console.error("Error updating event:", error);
     }
@@ -112,7 +112,6 @@ function CrudButtons() {
       await remove(eventRef);
       setShowDeleteModal(false);
       setSelectedEvent(null);
-      loadEvents();
     } catch (error) {
       console.error("Error deleting event:", error);
     }
@@ -135,6 +134,10 @@ function CrudButtons() {
       {showModal && (
         <div className="modal">
           <div className="modal-content">
+            <button 
+              className="modal-close" 
+              onClick={() => setShowModal(false)}
+            >×</button>
             <h2>Añadir Evento</h2>
             <form onSubmit={handleSubmit}>
               <input
@@ -172,6 +175,20 @@ function CrudButtons() {
       {showEditModal && (
         <div className="modal">
           <div className="modal-content">
+            <button 
+              className="modal-close" 
+              onClick={() => {
+                setShowEditModal(false);
+                setSelectedEvent(null);
+                setEventData({
+                  description: "",
+                  end: "",
+                  id: "0",
+                  start: "",
+                  title: ""
+                });
+              }}
+            >×</button>
             <h2>Editar Evento</h2>
             <select
               value={selectedEvent?.firebaseKey || ""}
@@ -244,6 +261,13 @@ function CrudButtons() {
       {showDeleteModal && (
         <div className="modal">
           <div className="modal-content">
+            <button 
+              className="modal-close" 
+              onClick={() => {
+                setShowDeleteModal(false);
+                setSelectedEvent(null);
+              }}
+            >×</button>
             <h2>Eliminar Evento</h2>
             <select
               value={selectedEvent?.firebaseKey || ""}
