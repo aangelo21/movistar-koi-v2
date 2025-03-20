@@ -39,5 +39,5 @@ You can, don't hesitate to modify anything and create a pull request to make it 
 
 ## Authors
 
-- [@aangelo-21](https://www.github.com/aangelo-21)
+- [@aangelo21](https://www.github.com/aangelo21)
 
