@@ -7,6 +7,7 @@ function CrudButtons() {
   const [showModal, setShowModal] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [showValidationModal, setShowValidationModal] = useState(false);
   const [nextId, setNextId] = useState(0);
   const [events, setEvents] = useState([]);
   const [selectedEvent, setSelectedEvent] = useState(null);
@@ -19,7 +20,7 @@ function CrudButtons() {
   });
 
   useEffect(() => {
-    const eventsRef = ref(db, "events");
+    const eventsRef = ref(db, "data/events");
     const unsubscribe = onValue(eventsRef, (snapshot) => {
       if (snapshot.exists()) {
         const eventsData = snapshot.val();
@@ -54,8 +55,14 @@ function CrudButtons() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    if (!eventData.title || !eventData.start || !eventData.end || !eventData.description) {
+      setShowValidationModal(true);
+      return;
+    }
+
     try {
-      const eventsRef = ref(db, "events");
+      const eventsRef = ref(db, "data/events");
       const formattedEvent = {
         ...eventData,
         id: nextId.toString(),
@@ -81,8 +88,13 @@ function CrudButtons() {
     e.preventDefault();
     if (!selectedEvent) return;
 
+    if (!eventData.title || !eventData.start || !eventData.end || !eventData.description) {
+      setShowValidationModal(true);
+      return;
+    }
+
     try {
-      const eventRef = ref(db, `events/${selectedEvent.firebaseKey}`);
+      const eventRef = ref(db, `/data/events/${selectedEvent.firebaseKey}`);
       const formattedEvent = {
         ...eventData,
         start: formatDateTime(eventData.start),
@@ -108,7 +120,7 @@ function CrudButtons() {
     if (!selectedEvent) return;
 
     try {
-      const eventRef = ref(db, `events/${selectedEvent.firebaseKey}`);
+      const eventRef = ref(db, `/data/events/${selectedEvent.firebaseKey}`);
       await remove(eventRef);
       setShowDeleteModal(false);
       setSelectedEvent(null);
@@ -297,6 +309,28 @@ function CrudButtons() {
                 </div>
               </div>
             )}
+          </div>
+        </div>
+      )}
+
+      {showValidationModal && (
+        <div className="modal">
+          <div className="modal-content">
+            <button 
+              className="modal-close" 
+              onClick={() => setShowValidationModal(false)}
+            >×</button>
+            <h2>Error de Validación</h2>
+            <p>Por favor, complete todos los campos requeridos:</p>
+            <ul>
+              {!eventData.title && <li>Título</li>}
+              {!eventData.start && <li>Fecha de inicio</li>}
+              {!eventData.end && <li>Fecha de fin</li>}
+              {!eventData.description && <li>Descripción</li>}
+            </ul>
+            <div className="modal-buttons">
+              <button onClick={() => setShowValidationModal(false)}>Aceptar</button>
+            </div>
           </div>
         </div>
       )}

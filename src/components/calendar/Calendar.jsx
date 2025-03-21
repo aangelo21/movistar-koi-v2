@@ -21,7 +21,7 @@ function CalendarApp() {
   });
 
   useEffect(() => {
-    const eventsRef = ref(db, "events");
+    const eventsRef = ref(db, "data/events");
     const unsubscribe = onValue(eventsRef, (snapshot) => {
       const data = snapshot.val();
       if (data) {
