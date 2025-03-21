@@ -1,3 +1,4 @@
+import AuthButtons from "../auth-buttons/AuthButtons";
 import "./Header.css";
 import React, { useState } from "react";
 
@@ -15,6 +16,17 @@ function Header() {
           src="/logos/movistar-koi.webp"
           alt="Movistar KOI logo"
         />
+
+        <nav className="header-navbar">
+          <a href="/home">Inicio</a>
+          <a href="/competitions">Competiciones</a>
+          <a href="/sponsors">Patrocinadores</a>
+          <a href="/calendar">Calendario</a>
+          <div className="header-auth-buttons-container">
+            <AuthButtons />
+          </div>
+        </nav>
+
         <img
           className="header-menu-icon"
           src="/icons/menu.svg"
@@ -22,20 +34,16 @@ function Header() {
           onClick={toggleMenu}
         />
 
-        <nav className="header-navbar">
-          <a href="/home">Inicio</a>
-          <a href="/competitions">Competiciones</a>
-          <a href="/sponsors">Patrocinadores</a>
-          <a href="/calendar">Calendario</a>
-        </nav>
-
         {isMenuOpen && (
-          <nav className="header-menu-navbar">
-            <a href="/home">Inicio</a>
-            <a href="/competitions">Competiciones</a>
-            <a href="/sponsors">Patrocinadores</a>
-            <a href="/calendar">Calendario</a>
-          </nav>
+          <>
+            <nav className="header-menu-navbar">
+              <AuthButtons />
+              <a href="/home">Inicio</a>
+              <a href="/competitions">Competiciones</a>
+              <a href="/sponsors">Patrocinadores</a>
+              <a href="/calendar">Calendario</a>
+            </nav>
+          </>
         )}
       </div>
     </>
