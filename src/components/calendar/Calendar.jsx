@@ -1,7 +1,7 @@
 import "./Calendar.css";
 import React, { useState, useEffect } from "react";
 import { useCalendarApp, ScheduleXCalendar } from "@schedule-x/react";
-import { createViewMonthGrid, createViewWeek } from "@schedule-x/calendar";
+import { createViewMonthGrid } from "@schedule-x/calendar";
 import { createEventsServicePlugin } from "@schedule-x/events-service";
 import "@schedule-x/theme-default/dist/index.css";
 import { createEventModalPlugin } from "@schedule-x/event-modal";
@@ -14,7 +14,7 @@ function CalendarApp() {
   const [isLoading, setIsLoading] = useState(true);
 
   const calendar = useCalendarApp({
-    views: [createViewWeek(), createViewMonthGrid()],
+    views: [createViewMonthGrid()],
     events: events,
     defaultView: "month",
     plugins: [eventsService, createEventModalPlugin()],
