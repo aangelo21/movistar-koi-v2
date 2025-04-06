@@ -17,7 +17,7 @@
 }
 
 .header-menu-icon:hover {
-  scale: 1.2;
+  scale: 1.1;
   transition: 0.2s;
 }
 
@@ -42,7 +42,7 @@
 }
 
 .header-menu-navbar a:hover {
-  scale: 1.2;
+  scale: 1.1;
   transition: 0.2s;
 }
 
@@ -82,7 +82,7 @@
   }
 
   .header-navbar a:hover {
-    scale: 1.2;
+    scale: 1.1;
     transition: 0.2s;
   }
 

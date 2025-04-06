@@ -2,8 +2,10 @@ import "./CrudButtons.css";
 import { useState, useEffect } from "react";
 import { ref, push, remove, update, onValue } from "firebase/database";
 import { db } from "../../firebase/config";
+import { useAuth } from "../../context/AuthContext";
 
 function CrudButtons() {
+  const { user } = useAuth();
   const [showModal, setShowModal] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
@@ -128,6 +130,8 @@ function CrudButtons() {
       console.error("Error deleting event:", error);
     }
   };
+
+  if (!user) return null;
 
   return (
     <>

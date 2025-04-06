@@ -5,10 +5,11 @@ import Home from "./pages/home/Home";
 import Competitions from "./pages/competitions/Competitions";
 import Sponsors from "./pages/sponsors/Sponsors";
 import Calendar from "./pages/calendar/Calendar";
+import { AuthProvider } from './context/AuthContext';
 
 function App() {
   return (
-    <>
+    <AuthProvider>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
@@ -21,7 +22,7 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
-    </>
+    </AuthProvider>
   );
 }
 
